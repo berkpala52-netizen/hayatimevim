@@ -679,7 +679,7 @@
       <p style="color:#CBD5E1;font-size:17px;margin-bottom:42px;">Mail adresinizi bırakın, size özel vergi iadesi ve ev hesabınızı 24 saat içinde gönderelim.</p>
       
       <!-- Formspree Form -->
-      <form action="https://formsubmit.co/palamutburak@hotmail.com" method="POST" id="leadForm" onsubmit="submitForm(event)" style="background:white;padding:38px;border-radius:16px;text-align:left;box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.2);">
+      <form action="https://api.web3forms.com/submit" method="POST" id="leadForm" onsubmit="submitForm(event)" style="background:white;padding:38px;border-radius:16px;text-align:left;box-shadow:0 25px 50px -12px rgb(0 0 0 / 0.2);">
         <input type="hidden" name="_subject" value="HayatımEvim - Yeni Hesaplama Talebi">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -802,27 +802,35 @@ ciftSelect.addEventListener('change', hesapla);
 // FORM GÖNDER — FormSubmit.co
 function submitForm(e) {
   e.preventDefault();
-  const form = document.getElementById('leadForm');
-  const btn = form.querySelector('button[type="submit"]');
+  var form = document.getElementById('leadForm');
+  var btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Gönderiliyor...';
   btn.disabled = true;
 
-  fetch('https://formsubmit.co/palamutburak@hotmail.com', {
+  var data = Object.fromEntries(new FormData(form));
+  data['access_key'] = 'b8f7c3d2-4a1e-4f6b-9c2d-3e8a1b5f7d9c';
+  data['subject'] = 'HayatımEvim - Yeni Hesaplama Talebi';
+  data['from_name'] = 'HayatımEvim';
+
+  // Try Web3Forms first
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(new FormData(form)).toString()
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
   })
-  .then(response => {
-    form.innerHTML = `
-      <div style="text-align:center;padding:32px 0;">
-        <div style="font-size:48px;margin-bottom:16px;">✅</div>
-        <h3 style="color:#2E7D5A;font-size:24px;margin-bottom:10px;">Talebiniz Alındı!</h3>
-        <p style="color:#475569;">Kişisel hesaplamanızı en geç 24 saat içinde e-posta adresinize göndereceğiz.</p>
-        <p style="color:#94A3B8;font-size:13px;margin-top:10px;">📍 Mersin · hayatimevim.com</p>
-      </div>`;
+  .then(function(res){ return res.json(); })
+  .then(function(json){
+    if(json.success){
+      form.innerHTML = '<div style="text-align:center;padding:32px 0;"><div style="font-size:48px;margin-bottom:16px;">✅</div><h3 style="color:#2E7D5A;font-size:24px;margin-bottom:10px;">Talebiniz Alındı!</h3><p style="color:#475569;">Kişisel hesaplamanızı en geç 24 saat içinde e-posta adresinize göndereceğiz.</p><p style="color:#94A3B8;font-size:13px;margin-top:10px;">📍 Mersin · hayatimevim.com</p></div>';
+    } else { throw new Error('fail'); }
   })
-  .catch(() => {
-    form.submit();
+  .catch(function(){
+    // Fallback: Mailto
+    var d = Object.fromEntries(new FormData(form));
+    var body = 'Ad: '+encodeURIComponent(d['Ad Soyad']||'')+'%0AAlan: '+encodeURIComponent(d['meslek']||'')+'%0AMaas: '+encodeURIComponent(d['maas']||'')+'%0ATelefon: '+encodeURIComponent(d['Telefon']||'')+'%0AEmail: '+encodeURIComponent(d['Email']||'');
+    window.location.href = 'mailto:palamutburak@hotmail.com?subject=HayatimEvim%20Hesaplama%20Talebi&body='+body;
+    btn.textContent = 'Gönder';
+    btn.disabled = false;
   });
 }
 
