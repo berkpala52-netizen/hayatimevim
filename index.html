@@ -197,6 +197,11 @@ input[type=range]{width:100%;height:8px;border-radius:4px;outline:none;cursor:po
       <input type="range" id="yasSlider" min="25" max="58" step="1" value="40" oninput="updateYas()">
       <div class="slider-hints"><span>25</span><span>58</span></div>
     </div>
+    <div class="slider-section" style="margin-top:24px;">
+      <div class="slider-label">Kaç yıldır kamu personelsiniz? <span class="slider-val" id="yilVal">8 yıl</span></div>
+      <input type="range" id="yilSlider" min="1" max="13" step="1" value="8" oninput="updateYil()">
+      <div class="slider-hints"><span>1 yıl</span><span>13 yıl (2013'den beri)</span></div>
+    </div>
     <div style="background:#fffbf0;border:1.5px solid rgba(218,165,32,.3);border-radius:10px;padding:16px;margin-top:24px;">
       <div style="font-size:13px;color:#92400e;font-weight:600;margin-bottom:4px;">Prim tavanı hesabı</div>
       <div style="font-size:13px;color:#78350f;">Maaşınız × %15 = <strong id="primHesap">37.500 TL</strong> → Yasal tavan: <strong>33.030 TL/ay</strong> (2026)</div>
@@ -211,7 +216,7 @@ input[type=range]{width:100%;height:8px;border-radius:4px;outline:none;cursor:po
 
     <!-- Kayıp kutusu -->
     <div class="kayip-box">
-      <div style="font-size:12px;font-weight:700;color:#991b1b;letter-spacing:1px;margin-bottom:6px;">2013'TEN BERİ KULLANILMAYAN HAK</div>
+      <div style="font-size:12px;font-weight:700;color:#991b1b;letter-spacing:1px;margin-bottom:6px;">BUGÜNE KADAR KULLANILMAYAN HAK</div>
       <div class="kayip-val" id="kayipVal">1.902.528 TL</div>
       <div class="kayip-lbl" id="kayipLbl">12 yıl × 158.544 TL — bu para sizindi</div>
     </div>
@@ -277,6 +282,93 @@ input[type=range]{width:100%;height:8px;border-radius:4px;outline:none;cursor:po
 </section>
 
 <!-- TRUST BAR -->
+
+<!-- SSS -->
+<section id="sss" style="background:white;padding:60px 24px;">
+  <div style="max-width:720px;margin:0 auto;">
+    <h2 style="font-size:clamp(22px,4vw,32px);font-weight:800;color:#0D2137;text-align:center;margin-bottom:8px;">Sık Sorulan Sorular</h2>
+    <p style="text-align:center;color:#64748b;font-size:15px;margin-bottom:36px;">Aklınızdaki soruların cevapları burada.</p>
+
+    <div id="sssAccordion">
+
+      <div class="sss-item">
+        <button class="sss-q" onclick="toggleSss(this)">
+          <span>Bu hak gerçekten var mı? Nasıl emin olabilirim?</span>
+          <span class="sss-arrow">▼</span>
+        </button>
+        <div class="sss-a">
+          Evet, tamamen yasal bir haktır. <strong>6327 Sayılı Kanun</strong> ile Gelir Vergisi Kanunu'nun 63. maddesinin 3. fıkrasına eklenmiştir. Resmi Gazete'de 29 Haziran 2012 tarih ve 28338 sayısıyla yayımlanmış; <strong>1 Ocak 2013'ten</strong> itibaren yürürlüktedir. Hazine ve Maliye Bakanlığı denetimindedir.
+        </div>
+      </div>
+
+      <div class="sss-item">
+        <button class="sss-q" onclick="toggleSss(this)">
+          <span>Her ay ne kadar ödeyeceğim, ne kadar geri alacağım?</span>
+          <span class="sss-arrow">▼</span>
+        </button>
+        <div class="sss-a">
+          Ödediğiniz prim, brüt maaşınızın <strong>%15'iyle</strong> sınırlıdır. 2026 yasal tavanı <strong>33.030 TL/ay</strong>dır. Bu primın <strong>%40'ı</strong> (üst vergi dilimi) otomatik olarak vergi matrahından düşülür ve maaşınıza yansır. 250.000 TL brüt maaşlı bir hekim için net maliyet <strong>19.818 TL/ay</strong>dır.
+        </div>
+      </div>
+
+      <div class="sss-item">
+        <button class="sss-q" onclick="toggleSss(this)">
+          <span>Ekstra başvuru yapmam gerekiyor mu?</span>
+          <span class="sss-arrow">▼</span>
+        </button>
+        <div class="sss-a">
+          Hayır. Poliçeyi yaptırdıktan sonra prim ödeme belgelerinizi muhasebe birimine iletmeniz yeterlidir. Devlet katkısı <strong>otomatik olarak maaşınıza yansır</strong>. Ayrıca bir vergi beyannamesi veya başvuru gerekmez.
+        </div>
+      </div>
+
+      <div class="sss-item">
+        <button class="sss-q" onclick="toggleSss(this)">
+          <span>Teminat neden dolar bazlı?</span>
+          <span class="sss-arrow">▼</span>
+        </button>
+        <div class="sss-a">
+          Dolar bazlı teminat, TL'nin değer kaybından korunmanızı sağlar. 40 yaşında bir uzman hekim için vefat teminatı <strong>~117.000 $</strong> düzeyindedir. Bu tutar, kur ne olursa olsun dolar cinsinden sabit kalır; aileniz enflasyondan etkilenmez.
+        </div>
+      </div>
+
+      <div class="sss-item">
+        <button class="sss-q" onclick="toggleSss(this)">
+          <span>Eşim de memursa ayrı poliçe yapabilir miyiz?</span>
+          <span class="sss-arrow">▼</span>
+        </button>
+        <div class="sss-a">
+          Evet. Her iki eş <strong>ayrı ayrı poliçe</strong> yaptırır ve her biri kendi maaşı üzerinden ayrı vergi iadesi alır. 250.000 TL brüt maaşlı çift memur ailede toplam yıllık iade <strong>317.088 TL</strong>'ye ulaşır; Mersin'de ev peşinatına yaklaşık <strong>4 yılda</strong> ulaşılır.
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#wizard" style="display:inline-block;background:#DAA520;color:#000;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;">Kişisel Hesaplama Yap →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.sss-item{border-bottom:1px solid #e2e8f0;}
+.sss-q{width:100%;background:none;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;font-size:15px;font-weight:600;color:#0D2137;gap:12px;}
+.sss-q:hover{color:#DAA520;}
+.sss-arrow{font-size:12px;color:#94a3b8;transition:.2s;flex-shrink:0;}
+.sss-a{font-size:14px;color:#475569;line-height:1.7;padding:0 0 18px;display:none;}
+.sss-a strong{color:#0D2137;}
+.sss-item.open .sss-arrow{transform:rotate(180deg);}
+.sss-item.open .sss-a{display:block;}
+</style>
+
+<script>
+function toggleSss(btn){
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains("open");
+  document.querySelectorAll(".sss-item").forEach(function(i){i.classList.remove("open");});
+  if(!isOpen) item.classList.add("open");
+}
+</script>
+
 <div class="trust-bar">
   <div class="trust-items">
     <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E7D5A" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>SSL Güvenli</div>
@@ -297,6 +389,7 @@ input[type=range]{width:100%;height:8px;border-radius:4px;outline:none;cursor:po
 
 <script>
 var selectedJob = "";
+var yilCalisan = 8;
 var maas = 250000;
 var yas = 40;
 
@@ -327,13 +420,17 @@ function updateYas(){
   yas = parseInt(document.getElementById("yasSlider").value);
   document.getElementById("yasVal").textContent = yas;
 }
+function updateYil(){
+  yilCalisan = parseInt(document.getElementById("yilSlider").value);
+  document.getElementById("yilVal").textContent = yilCalisan + " yıl";
+}
 
 function calcResults(){
   var prim = Math.min(maas*0.15, 33030);
   var aylikIade = Math.round(prim*0.40);
   var yillikIade = aylikIade*12;
   var netMaliyet = Math.round(prim - aylikIade);
-  var yil2013 = 2026 - 2013;
+  var yil2013 = yilCalisan;
   var kayip = yillikIade * yil2013;
   // Vefat teminatı kaba hesap
   var karpan = yas <= 35 ? 18 : yas <= 40 ? 13 : yas <= 45 ? 8 : 5;
@@ -344,7 +441,7 @@ function calcResults(){
   document.getElementById("netMaliyet").textContent = netMaliyet.toLocaleString("tr-TR")+" TL";
   document.getElementById("vefatTeminat").textContent = "~"+vefat.toLocaleString("tr-TR")+" \$";
   document.getElementById("kayipVal").textContent = kayip.toLocaleString("tr-TR")+" TL";
-  document.getElementById("kayipLbl").textContent = yil2013+" yıl × "+yillikIade.toLocaleString("tr-TR")+" TL — bu para sizindi";
+  document.getElementById("kayipLbl").textContent = yil2013+" yıl × "+yillikIade.toLocaleString("tr-TR")+" TL — bu para sizindi ("+yil2013+" yıllık hak)";
   document.getElementById("ciftIade").textContent = (yillikIade*2).toLocaleString("tr-TR")+" TL";
 
   // Hidden form fields
