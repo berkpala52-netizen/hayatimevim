@@ -463,10 +463,11 @@ input[type=range]{
       <div class="result-sub">GVK 63/3 · Devlet katkısı · Otomatik</div>
     </div>
 
-    <div class="result-grid">
+    <div class="result-grid" style="grid-template-columns:repeat(2,1fr);">
       <div class="result-box"><div class="result-box-val" id="aylikIade">13.212 TL</div><div class="result-box-lbl">Aylık bordro artışı</div></div>
-      <div class="result-box green"><div class="result-box-val" id="netMaliyet">19.818 TL</div><div class="result-box-lbl">Net aylık maliyet</div></div>
-      <div class="result-box blue"><div class="result-box-val" id="vefatTeminat">~117.000 $</div><div class="result-box-lbl">Vefat teminatı</div></div>
+      <div class="result-box green"><div class="result-box-val" id="netMaliyet">19.818 TL</div><div class="result-box-lbl">Net aylık maliyet (TL)</div></div>
+      <div class="result-box" style="border-top-color:#f59e0b;"><div class="result-box-val" id="aylikDolar">~750 $</div><div class="result-box-lbl">Aylık prim (USD karşılığı)</div></div>
+      <div class="result-box blue"><div class="result-box-val" id="vefatTeminat">~117.000 $</div><div class="result-box-lbl">Vefat teminatı (USD)</div></div>
     </div>
 
     <div class="cift-note">
@@ -617,6 +618,8 @@ function calcResults(){
   document.getElementById("aylikIade").textContent=aylik.toLocaleString("tr-TR")+" TL";
   document.getElementById("netMaliyet").textContent=net.toLocaleString("tr-TR")+" TL";
   document.getElementById("vefatTeminat").textContent="~"+vefat.toLocaleString("tr-TR")+" $";
+  var aylikDolar=Math.round(prim/44);
+  document.getElementById("aylikDolar").textContent="~"+aylikDolar.toLocaleString("tr-TR")+" $";
   document.getElementById("kayipVal").textContent=kayip.toLocaleString("tr-TR")+" TL";
   document.getElementById("kayipSub").textContent=yilCalisan+" yıl × "+yillik.toLocaleString("tr-TR")+" TL — bu para sizindi";
   document.getElementById("ciftIade").textContent=(yillik*2).toLocaleString("tr-TR")+" TL";
