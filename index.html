@@ -322,6 +322,7 @@ input[type=range]{
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(218,165,32,.6);}50%{box-shadow:0 0 0 6px rgba(218,165,32,0);}}
 @keyframes pulse-gold{0%,100%{box-shadow:0 4px 20px rgba(218,165,32,.4);}50%{box-shadow:0 4px 28px rgba(218,165,32,.7);}}
 @keyframes pulse-wa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5);}50%{box-shadow:0 4px 28px rgba(37,211,102,.8);}}
+@keyframes blink-gold{0%,100%{opacity:1;text-shadow:0 0 20px rgba(218,165,32,.6);}50%{opacity:.7;text-shadow:0 0 40px rgba(218,165,32,1),0 0 60px rgba(218,165,32,.4);}}
 
 /* ─── SCROLL ANIMATIONS ─── */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
@@ -457,17 +458,81 @@ input[type=range]{
       <div class="kayip-sub" id="kayipSub">8 yıl × 158.544 TL — bu para sizindi</div>
     </div>
 
-    <div class="result-main">
-      <div class="result-eyebrow">YILLIK VERGİ İADESİ</div>
-      <div class="result-big" id="yillikIade">158.544 TL</div>
-      <div class="result-sub">GVK 63/3 · Devlet katkısı · Otomatik</div>
+    <!-- Akış: Ödüyorsunuz → Devlet Veriyor → Net Maliyet -->
+    <div style="background:white;border-radius:14px;border:1.5px solid #e2e8f0;overflow:hidden;margin-bottom:16px;">
+
+      <!-- Satır 1: Ödüyorsunuz -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #f0f4f8;background:#fafbfc;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:16px;">💳</div>
+          <div>
+            <div style="font-size:12px;color:#94a3b8;font-weight:600;letter-spacing:.5px;">SİZ ÖDEYECEKSİNİZ</div>
+            <div style="font-size:13px;color:#475569;margin-top:1px;">Aylık prim (Dolar Birikimli Hayat Sigortası)</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:#dc2626;" id="aylikPrimTL">33.030 TL</div>
+          <div style="font-size:12px;color:#94a3b8;margin-top:2px;" id="aylikDolar">≈ 750 $/ay</div>
+        </div>
+      </div>
+
+      <!-- Ok -->
+      <div style="text-align:center;padding:8px 0;background:#f8fafc;color:#94a3b8;font-size:18px;">↓</div>
+
+      <!-- Satır 2: Devlet veriyor -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #f0f4f8;background:#f0fdf4;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#bbf7d0;display:flex;align-items:center;justify-content:center;font-size:16px;">🏛️</div>
+          <div>
+            <div style="font-size:12px;color:#16a34a;font-weight:600;letter-spacing:.5px;">DEVLET GERİ VERİYOR (GVK 63/3)</div>
+            <div style="font-size:13px;color:#475569;margin-top:1px;">Aylık vergi iadesi · Maaşa otomatik yansır</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:Playfair Display,serif;font-size:22px;font-weight:700;color:#16a34a;" id="aylikIade">− 13.212 TL</div>
+          <div style="font-size:12px;color:#16a34a;margin-top:2px;" id="yillikIade">158.544 TL/yıl</div>
+        </div>
+      </div>
+
+      <!-- Ok -->
+      <div style="text-align:center;padding:8px 0;background:#f8fafc;color:#94a3b8;font-size:18px;">↓</div>
+
+      <!-- Satır 3: Net maliyet -->
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:linear-gradient(135deg,#071220,#1a3a5c);">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(218,165,32,.2);display:flex;align-items:center;justify-content:center;font-size:16px;">✅</div>
+          <div>
+            <div style="font-size:12px;color:rgba(218,165,32,.8);font-weight:600;letter-spacing:.5px;">GERÇEK MALİYETİNİZ</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:1px;">Cebinizden çıkan net tutar</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:Playfair Display,serif;font-size:26px;font-weight:900;color:#DAA520;" id="netMaliyet">19.818 TL</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:2px;" id="netDolar">≈ 450 $/ay</div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="result-grid" style="grid-template-columns:repeat(2,1fr);">
-      <div class="result-box"><div class="result-box-val" id="aylikIade">13.212 TL</div><div class="result-box-lbl">Aylık bordro artışı</div></div>
-      <div class="result-box green"><div class="result-box-val" id="netMaliyet">19.818 TL</div><div class="result-box-lbl">Net aylık maliyet (TL)</div></div>
-      <div class="result-box" style="border-top-color:#f59e0b;"><div class="result-box-val" id="aylikDolar">~750 $</div><div class="result-box-lbl">Aylık prim (USD karşılığı)</div></div>
-      <div class="result-box blue"><div class="result-box-val" id="vefatTeminat">~117.000 $</div><div class="result-box-lbl">Vefat teminatı (USD)</div></div>
+    <!-- Vefat teminatı ayrı -->
+    <div style="background:linear-gradient(135deg,#0d1b2e,#1e3a5c);border-radius:12px;padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="font-size:24px;">🛡️</div>
+        <div>
+          <div style="font-size:12px;color:rgba(96,165,250,.8);font-weight:600;letter-spacing:.5px;">VEFAT TEMİNATI</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:1px;">Dolar bazlı · TL erimesinden korunur</div>
+        </div>
+      </div>
+      <div style="font-family:Playfair Display,serif;font-size:26px;font-weight:900;color:#60a5fa;" id="vefatTeminat">~117.000 $</div>
+    </div>
+
+    <!-- 12 Yıl Birikim - Yanıp Sönen -->
+    <div style="border-radius:14px;padding:20px 24px;margin-bottom:16px;background:linear-gradient(135deg,#1a0533,#2d0b4e);border:1.5px solid rgba(218,165,32,.3);text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 50% 50%,rgba(218,165,32,.08),transparent 70%);pointer-events:none;"></div>
+      <div style="font-size:12px;font-weight:700;color:rgba(218,165,32,.7);letter-spacing:2px;margin-bottom:10px;">12 YILDA TOPLAM BİRİKİM</div>
+      <div id="birikimVal" style="font-family:Playfair Display,serif;font-size:42px;font-weight:900;color:#DAA520;animation:blink-gold 2s infinite;">1.902.528 TL</div>
+      <div id="birikimDolar" style="font-size:16px;color:rgba(255,255,255,.5);margin-top:6px;">≈ 43.239 $</div>
+      <div id="birikimEv" style="font-size:14px;color:rgba(218,165,32,.6);margin-top:8px;font-weight:600;">🏠 Mersin 1+1 daire peşinatına yeterli</div>
     </div>
 
     <div class="cift-note">
@@ -614,15 +679,24 @@ function calcResults(){
   var kayip=yillik*yilCalisan;
   var karpan=yas<=35?18:yas<=40?13:yas<=45?8:5;
   var vefat=Math.round((prim*12/44)*karpan);
-  document.getElementById("yillikIade").textContent=yillik.toLocaleString("tr-TR")+" TL";
-  document.getElementById("aylikIade").textContent=aylik.toLocaleString("tr-TR")+" TL";
+  document.getElementById("yillikIade").textContent=yillik.toLocaleString("tr-TR")+" TL/yıl";
+  document.getElementById("aylikIade").textContent="− "+aylik.toLocaleString("tr-TR")+" TL";
   document.getElementById("netMaliyet").textContent=net.toLocaleString("tr-TR")+" TL";
   document.getElementById("vefatTeminat").textContent="~"+vefat.toLocaleString("tr-TR")+" $";
   var aylikDolar=Math.round(prim/44);
-  document.getElementById("aylikDolar").textContent="~"+aylikDolar.toLocaleString("tr-TR")+" $";
+  var netDolar=Math.round(net/44);
+  document.getElementById("aylikPrimTL").textContent=Math.round(prim).toLocaleString("tr-TR")+" TL";
+  document.getElementById("aylikDolar").textContent="≈ "+aylikDolar.toLocaleString("tr-TR")+" $/ay";
+  document.getElementById("netDolar").textContent="≈ "+netDolar.toLocaleString("tr-TR")+" $/ay";
   document.getElementById("kayipVal").textContent=kayip.toLocaleString("tr-TR")+" TL";
   document.getElementById("kayipSub").textContent=yilCalisan+" yıl × "+yillik.toLocaleString("tr-TR")+" TL — bu para sizindi";
   document.getElementById("ciftIade").textContent=(yillik*2).toLocaleString("tr-TR")+" TL";
+  var birikim12=yillik*12;
+  var birikimDolar=Math.round(birikim12/44);
+  document.getElementById("birikimVal").textContent=birikim12.toLocaleString("tr-TR")+" TL";
+  document.getElementById("birikimDolar").textContent="≈ "+birikimDolar.toLocaleString("tr-TR")+" $";
+  var evMsg = birikim12 >= 1900000 ? "🏠 Mersin 1+1 daire peşinatına yeterli" : birikim12 >= 900000 ? "🏠 Mersin 1+1 peşinatına yaklaşıyorsunuz" : "🏠 Mersin ev peşinatına adım adım";
+  document.getElementById("birikimEv").textContent=evMsg;
   document.getElementById("formMeslek").value=selectedJob;
   document.getElementById("formMaas").value=maas.toLocaleString("tr-TR")+" TL";
   document.getElementById("formYas").value=yas;
