@@ -225,14 +225,10 @@ input[type=range]{
 .result-box.blue{border-top-color:#003DA5;background:#EEF4FF;}
 .result-box-val{font-family:"Playfair Display",serif;font-size:19px;font-weight:700;color:var(--navy2);}
 .result-box-lbl{font-size:12px;color:#64748b;margin-top:4px;}
-.cift-note{
-  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
-  border:1.5px solid rgba(46,125,90,.25);border-radius:10px;
-  padding:14px 18px;margin-bottom:24px;display:flex;align-items:center;gap:12px;
-}
-.cift-icon{font-size:24px;flex-shrink:0;}
-.cift-title{font-weight:700;font-size:14px;color:#065f46;}
-.cift-sub{font-size:13px;color:#047857;margin-top:2px;}
+
+
+
+
 
 /* ─── FORM ─── */
 .form-section{border-top:1px solid #e2e8f0;padding-top:28px;margin-top:4px;}
@@ -360,7 +356,7 @@ input[type=range]{
 <div id="breakingBar" style="background:linear-gradient(135deg,#dc2626,#b91c1c);padding:10px 24px;text-align:center;position:fixed;top:72px;left:0;right:0;z-index:999;border-bottom:1px solid rgba(255,255,255,.2);transition:opacity .8s ease,transform .8s ease;opacity:1;transform:translateY(0);">
   <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;">
     <span style="background:rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:800;padding:3px 8px;border-radius:3px;letter-spacing:1px;">YENİ</span>
-    <span style="font-size:13px;color:#fff;font-weight:500;">1 Haziran 2026 itibarıyla özel klinik hekimleri 4A'lı statüye geçti → GVK 63/3 vergi iadesi hakkı doğdu</span>
+    <span style="font-size:13px;color:#fff;font-weight:500;">1 Haziran 2026 itibarıyla özel klinik hekimleri 4A'lı statüye geçti → GVK 63/3 vergi iadesi hakkı doğmuştur</span>
     <a href="#wizard" style="background:#fff;color:#dc2626;font-size:12px;font-weight:700;padding:4px 12px;border-radius:4px;text-decoration:none;white-space:nowrap;">Hesapla →</a>
   </div>
 </div>
@@ -374,23 +370,23 @@ input[type=range]{
       <div class="hero-badge-dot"></div>
       <span>🔴 YENİ · 1 HAZİRAN 2026 · ÖZEL KLİNİK HEKİMLERİ DE KAPSAMA GİRDİ</span>
     </div>
-    <h1>1 Haziran'dan İtibaren<br><em>Siz de Bu Haktansınız</em></h1>
+    <h1>1 Haziran'dan İtibaren<br><em>Bu Hak Sizin de</em></h1>
     <p class="hero-sub">
       Özel klinik hekimleri <strong>1 Haziran 2026'dan itibaren 4A'lı (bordrolu)</strong> statüye geçti.
       Bu değişiklikle birlikte GVK Madde 63/3 kapsamında
       <strong>%40'a kadar vergi iadesi</strong> hakkınız doğdu.<br>
       <strong style="color:rgba(218,165,32,.9);">Dolar Birikimli, Vefat Teminatlı Hayat Sigortası</strong> ile
-      devlet her ay maaşınıza otomatik geri yansıtıyor.
+      devlet bu tutarı her ay maaşınıza otomatik yansıtıyor.
     </p>
     <div class="hero-btns">
       <a href="#wizard" class="btn-gold">⚡ Hakkımı Hesapla</a>
       <a href="#wizard" class="btn-ghost">Bugüne Kadar Ne Kaybettim? →</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat-label">🩺 ÖZEL KLİNİK HEKİMİ ÖRNEĞİ · 250.000 TL BRÜT MAAŞ</div>
-      <div><div class="hero-stat-val">158.544 ₺</div><div class="hero-stat-lbl">Yıllık iade (Dr. örneği)</div></div>
-      <div><div class="hero-stat-val">~117.000 $</div><div class="hero-stat-lbl">Vefat teminatı (Dr. örneği)</div></div>
-      <div><div class="hero-stat-val">12 Yıl</div><div class="hero-stat-lbl">Mersin ev peşinatı</div></div>
+      <div class="hero-stat-label">🩺 ÖRNEK HESAPLAMA · 250.000 TL BRÜT MAAŞ</div>
+      <div><div class="hero-stat-val">158.544 ₺</div><div class="hero-stat-lbl">Yıllık Vergi İadesi</div></div>
+      <div><div class="hero-stat-val">~117.000 $</div><div class="hero-stat-lbl">Vefat Teminatı (Dolar)</div></div>
+      <div><div class="hero-stat-val">Uzun Vadeli Birikim</div><div class="hero-stat-lbl">Uzun Vadeli Birikim</div></div>
     </div>
   </div>
 </section>
@@ -423,7 +419,7 @@ input[type=range]{
   <!-- ADIM 1 -->
   <div class="step-card active" id="step1">
     <div class="step-card-title">Mesleğiniz nedir?</div>
-    <div class="step-card-sub">Size özel hesaplama için lütfen seçin.</div>
+    <div class="step-card-sub">Size özel hesaplama yapabilmemiz için mesleğinizi seçin.</div>
     <div class="job-grid" id="jobGrid">
       <div class="job-card" data-job="Doktor" data-mid="250"><div class="job-icon">🩺</div><div class="job-name">Doktor</div><div class="job-range">Uzman Hekim</div></div>
       <div class="job-card" data-job="Öğretmen" data-mid="110"><div class="job-icon">📚</div><div class="job-name">Öğretmen</div><div class="job-range">Her Kademe</div></div>
@@ -438,7 +434,7 @@ input[type=range]{
   <!-- ADIM 2 -->
   <div class="step-card" id="step2">
     <div class="step-card-title">Maaş, yaş ve hizmet süreniz</div>
-    <div class="step-card-sub">Kişiselleştirilmiş hesaplama için bilgilerinizi girin.</div>
+    <div class="step-card-sub">Kişisel hesaplama için bilgilerinizi girin.</div>
 
     <div class="slider-wrap">
       <div class="slider-label">Brüt Maaş <span class="slider-val" id="maasVal">250.000 TL</span></div>
@@ -453,7 +449,7 @@ input[type=range]{
     </div>
 
     <div class="slider-wrap">
-      <div class="slider-label">Kaç yıldır kamu personelsiniz? <span class="slider-val" id="yilVal">8 yıl</span></div>
+      <div class="slider-label">Kaç yıldır kamu personeli olarak çalışıyorsunuz? <span class="slider-val" id="yilVal">8 yıl</span></div>
       <input type="range" id="yilSlider" min="1" max="13" step="1" value="8" oninput="updateYil()">
       <div class="slider-hints"><span>1 yıl</span><span>13 yıl (2013'den beri)</span></div>
     </div>
@@ -471,9 +467,9 @@ input[type=range]{
     <div class="step-card-title">Kişisel Hesaplama Sonucunuz</div>
 
     <div class="result-kayip">
-      <div class="kayip-eyebrow">BUGÜNE KADAR KULLANILMAYAN HAK</div>
+      <div class="kayip-eyebrow">BUGÜNE KADAR KULLANILMAYAN VERGİ İADESİ</div>
       <div class="kayip-val" id="kayipVal">1.268.352 TL</div>
-      <div class="kayip-sub" id="kayipSub">8 yıl × 158.544 TL — bu para sizindi</div>
+      <div class="kayip-sub" id="kayipSub">8 yıl × 158.544 TL — bu tutar sizin hakınızdı</div>
     </div>
 
     <!-- Akış: Ödüyorsunuz → Devlet Veriyor → Net Maliyet -->
@@ -484,7 +480,7 @@ input[type=range]{
         <div style="display:flex;align-items:center;gap:10px;">
           <div style="width:36px;height:36px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;font-size:16px;">💳</div>
           <div>
-            <div style="font-size:12px;color:#94a3b8;font-weight:600;letter-spacing:.5px;">SİZ ÖDEYECEKSİNİZ</div>
+            <div style="font-size:12px;color:#94a3b8;font-weight:600;letter-spacing:.5px;">SİZ ÖDÜYORSUNUZ</div>
             <div style="font-size:13px;color:#475569;margin-top:1px;">Aylık prim (Dolar Birikimli Hayat Sigortası)</div>
           </div>
         </div>
@@ -521,7 +517,7 @@ input[type=range]{
           <div style="width:36px;height:36px;border-radius:50%;background:rgba(218,165,32,.2);display:flex;align-items:center;justify-content:center;font-size:16px;">✅</div>
           <div>
             <div style="font-size:12px;color:rgba(218,165,32,.8);font-weight:600;letter-spacing:.5px;">GERÇEK MALİYETİNİZ</div>
-            <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:1px;">Cebinizden çıkan net tutar</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:1px;">Net aylık maliyetiniz</div>
           </div>
         </div>
         <div style="text-align:right;">
@@ -544,26 +540,19 @@ input[type=range]{
       <div style="font-family:Playfair Display,serif;font-size:26px;font-weight:900;color:#60a5fa;" id="vefatTeminat">~117.000 $</div>
     </div>
 
-    <!-- 12 Yıl Birikim - Yanıp Sönen -->
+    <!-- Uzun Vadeli Birikim Birikim - Yanıp Sönen -->
     <div style="border-radius:14px;padding:20px 24px;margin-bottom:16px;background:linear-gradient(135deg,#1a0533,#2d0b4e);border:1.5px solid rgba(218,165,32,.3);text-align:center;position:relative;overflow:hidden;">
       <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 50% 50%,rgba(218,165,32,.08),transparent 70%);pointer-events:none;"></div>
-      <div style="font-size:12px;font-weight:700;color:rgba(218,165,32,.7);letter-spacing:2px;margin-bottom:10px;">12 YILDA TOPLAM BİRİKİM</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(218,165,32,.7);letter-spacing:2px;margin-bottom:10px;">UZUN VADELİ TOPLAM BİRİKİM</div>
       <div id="birikimVal" style="font-family:Playfair Display,serif;font-size:42px;font-weight:900;color:#DAA520;animation:blink-gold 2s infinite;">1.902.528 TL</div>
       <div id="birikimDolar" style="font-size:16px;color:rgba(255,255,255,.5);margin-top:6px;">≈ 43.239 $</div>
-      <div id="birikimEv" style="font-size:14px;color:rgba(218,165,32,.6);margin-top:8px;font-weight:600;">🏠 Mersin 1+1 daire peşinatına yeterli</div>
+      <div id="birikimEv" style="font-size:14px;color:rgba(218,165,32,.6);margin-top:8px;font-weight:600;">🏠 Uzun vadeli birikim hedefine ulaşıldı</div>
     </div>
-
-    <div class="cift-note">
-      <div class="cift-icon">👫</div>
-      <div>
-        <div class="cift-title">Eşiniz de kamu personeliyse:</div>
-        <div class="cift-sub">Yıllık toplam iade <strong id="ciftIade">317.088 TL</strong> — ev peşinatına ~4 yılda ulaşırsınız</div>
-      </div>
     </div>
 
     <div class="form-section">
-      <div class="form-title">Özel poliçenizi hazırlayalım</div>
-      <div class="form-sub">İpek UÇAR (Bes-el Sigorta · Agesa Danışmanı) sizi arayacak. Taahhütsüz.</div>
+      <div class="form-title">Size Özel Poliçe Hazırlayalım</div>
+      <div class="form-sub">Bes-el Sigorta danışmanımız en kısa sürede sizi arayacaktır. Taahhütsüz.</div>
 
       <form id="leadForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitForm(event)">
         <input type="hidden" name="access_key" value="f3fefb93-6b7d-4234-b954-a0d6c6a0c3de">
@@ -595,7 +584,7 @@ input[type=range]{
   <div class="sss-wrap">
     <div class="section-eyebrow fade-in">SORULAR & CEVAPLAR</div>
     <h2 class="section-title fade-in">Sık Sorulan Sorular</h2>
-    <p class="section-sub fade-in">Aklınızdaki soruların cevapları burada.</p>
+    <p class="section-sub fade-in">Sık sorulan soruların yanıtları aşağıdadır.</p>
 
     <div id="sssAccordion">
       <div class="sss-item">
@@ -616,7 +605,7 @@ input[type=range]{
       </div>
       <div class="sss-item">
         <button class="sss-q" onclick="toggleSss(this)"><span>Eşim de memursa ayrı poliçe yapabilir miyiz?</span><div class="sss-icon">+</div></button>
-        <div class="sss-a">Evet. Her iki eş <strong>ayrı ayrı poliçe</strong> yaptırır ve her biri kendi maaşı üzerinden ayrı vergi iadesi alır. Çift memur ailede toplam yıllık iade <strong>317.088 TL'ye</strong> ulaşır; Mersin'de ev peşinatına yaklaşık <strong>4 yılda</strong> ulaşılır.</div>
+        <div class="sss-a">Evet. Her iki eş <strong>ayrı ayrı poliçe</strong> yaptırır ve her biri kendi maaşı üzerinden ayrı vergi iadesi alır. Çift memur ailede toplam yıllık iade <strong>317.088 TL'ye</strong> ulaşır; Uzun Vadeli Birikimna yaklaşık <strong>4 yılda</strong> ulaşılır.</div>
       </div>
       <div class="sss-item">
         <button class="sss-q" onclick="toggleSss(this)"><span>BES toplu ödeme avantajı nedir?</span><div class="sss-icon">+</div></button>
@@ -636,7 +625,7 @@ input[type=range]{
   <div style="max-width:700px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
 
     <div style="background:#F0F4FF;border-radius:12px;padding:20px 24px;border-left:4px solid #003DA5;">
-      <div style="font-size:11px;font-weight:700;color:#003DA5;letter-spacing:1px;margin-bottom:8px;">YETKİLİ</div>
+      <div style="font-size:11px;font-weight:700;color:#003DA5;letter-spacing:1px;margin-bottom:8px;">SORUMLU YÖNETİCİ</div>
       <div style="font-weight:700;font-size:16px;color:#0D2137;margin-bottom:4px;">Denizhan UÇAR</div>
       <a href="tel:+905303836949" style="font-size:15px;color:#003DA5;font-weight:600;text-decoration:none;display:block;">+90 533 579 82 86</a>
     </div>
@@ -674,7 +663,7 @@ input[type=range]{
     <div class="trust-div">|</div>
     <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Hazine Onaylı Ürün</div>
     <div class="trust-div">|</div>
-    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Agesa Hayat ve Emeklilik Yetkili Acentesi</div>
+    <div class="trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Agesa Hayat ve Emeklilik A.Ş. Yetkili Acentesi</div>
   </div>
 </div>
 <div class="copyright">© 2025 Bes-el Sigorta · Agesa Hayat ve Emeklilik A.Ş. Yetkili Acentesi · İpek UÇAR · Mersin ·  · hayatimevim.com</div>
@@ -764,13 +753,12 @@ function calcResults(){
   document.getElementById("aylikDolar").textContent="≈ "+aylikDolar.toLocaleString("tr-TR")+" $/ay";
   document.getElementById("netDolar").textContent="≈ "+netDolar.toLocaleString("tr-TR")+" $/ay";
   document.getElementById("kayipVal").textContent=kayip.toLocaleString("tr-TR")+" TL";
-  document.getElementById("kayipSub").textContent=yilCalisan+" yıl × "+yillik.toLocaleString("tr-TR")+" TL — bu para sizindi";
-  document.getElementById("ciftIade").textContent=(yillik*2).toLocaleString("tr-TR")+" TL";
+  document.getElementById("kayipSub").textContent=yilCalisan+" yıl × "+yillik.toLocaleString("tr-TR")+" TL — bu tutar sizin hakınızdı";
   var birikim12=yillik*12;
   var birikimDolar=Math.round(birikim12/44);
   document.getElementById("birikimVal").textContent=birikim12.toLocaleString("tr-TR")+" TL";
   document.getElementById("birikimDolar").textContent="≈ "+birikimDolar.toLocaleString("tr-TR")+" $";
-  var evMsg = birikim12 >= 1900000 ? "🏠 Mersin 1+1 daire peşinatına yeterli" : birikim12 >= 900000 ? "🏠 Mersin 1+1 peşinatına yaklaşıyorsunuz" : "🏠 Mersin ev peşinatına adım adım";
+  var evMsg = birikim12 >= 1900000 ? "🏠 Uzun vadeli birikim hedefine ulaşıldı" : birikim12 >= 900000 ? "📈 Birikim hedefine yaklaşılıyor" : "🏠 Uzun Vadeli Birikimna adım adım";
   document.getElementById("birikimEv").textContent=evMsg;
   document.getElementById("formMeslek").value=selectedJob;
   document.getElementById("formMaas").value=maas.toLocaleString("tr-TR")+" TL";
